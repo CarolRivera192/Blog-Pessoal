@@ -18,7 +18,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	private UserDetailsService userDeatilsService;
 	
-	@Override
+	@Override //Método sobreposto
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.userDetailsService(userDeatilsService);
 	}

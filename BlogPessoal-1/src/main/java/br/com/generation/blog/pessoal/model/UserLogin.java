@@ -7,6 +7,16 @@ public class UserLogin {
 	private String senha;
 	private String token;
 
+	public UserLogin() {
+		
+	}
+	
+	public UserLogin(Usuario usuarioclass) {
+		this.nome = usuarioclass.getNome();
+		this.usuario = usuarioclass.getUsuario();
+		this.senha = usuarioclass.getSenha();
+	}
+
 	public String getNome() {
 		return nome;
 	}
