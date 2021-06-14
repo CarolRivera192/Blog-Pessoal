@@ -12,9 +12,13 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class BlogPessoal1Application {
 
+	/* Implementa um método Controller na Classe de inicialização do projeto
+	 * abrindo o Swagger na raíz do projeto (http://localhost:8080: por exexmplo), 
+	 * como se fosse a página inicial da Api (index ou home).*/
+	
 	@GetMapping
 	public ModelAndView swaggerUi() {
-	return new ModelAndView("redirect:/swagger-ui ");
+	return new ModelAndView("redirect:/swagger-ui/");
 	}
 	
 	public static void main(String[] args) {

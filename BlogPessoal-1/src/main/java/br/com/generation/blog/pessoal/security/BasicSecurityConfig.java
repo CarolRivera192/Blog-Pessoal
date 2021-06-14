@@ -22,6 +22,11 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.userDetailsService(userDeatilsService);
 		
+		/* Autenticação em memória: Cria um Usuário e Senha para testes,
+		 * disoensando a necessidade de cadastrar um usuário no Banco de Dados.
+		 * 
+		 * Não utilizar este recurso em abiente de produção.*/
+		
 		auth.inMemoryAuthentication()
 		.withUser("root")
 		.password(passwordEncoder().encode("Admin357/"))

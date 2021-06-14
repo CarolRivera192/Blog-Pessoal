@@ -15,6 +15,10 @@ import springfox.documentation.service.Response;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 
+/*  @Configuration é a anotação que indica que uma classe é responsável
+*	por configurar um módulo da API. Neste caso, nossa classe configura
+*	a execução do Swagger.*/
+
 @Configuration
 public class SwaggerConfig {
 		

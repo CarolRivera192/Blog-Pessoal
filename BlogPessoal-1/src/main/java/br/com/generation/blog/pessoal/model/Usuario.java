@@ -28,9 +28,15 @@ public class Usuario {
 	@Size(min = 5, max = 100)
 	private String senha;
 
-	public Usuario() {}
-	
-	public Usuario(String nome, String usuario, String senha) {
+	/** Construtores Criados para realização de testes */
+
+	/** Construtor Vazio - Cria um Objeto vazio  */
+	public Usuario() {
+	}
+
+	/** Construtor com os atributos - Cria um Objeto com dados */
+	public Usuario(long id, String nome, String usuario, String senha) {
+		this.id = id;
 		this.nome = nome;
 		this.usuario = usuario;
 		this.senha = senha;
