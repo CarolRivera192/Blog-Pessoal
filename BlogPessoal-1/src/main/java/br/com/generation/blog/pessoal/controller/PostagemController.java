@@ -51,6 +51,7 @@ public class PostagemController {
 	}
 	
 	//=================== Post Postagem ======================//
+	
 	@PostMapping
 	public ResponseEntity<Postagem> post (@RequestBody Postagem postagem) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
@@ -58,6 +59,7 @@ public class PostagemController {
 	}
 	
 	//=================== Put Postagem ======================//
+	
 	@PutMapping
 	public ResponseEntity<Postagem> put (@RequestBody Postagem postagem) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));

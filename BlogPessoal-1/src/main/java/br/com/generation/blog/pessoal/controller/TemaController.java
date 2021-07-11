@@ -26,11 +26,15 @@ public class TemaController {
 	@Autowired
 	private TemaRepository repository;
 	
+	//===================== Find All ========================//
+	
 	@GetMapping
 	public ResponseEntity<List<Tema>> getAll() {
 		
 		return ResponseEntity.ok(repository.findAll());
 	}
+	
+	//=================== Find By Id ======================//
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Tema> getById(@PathVariable long id){
@@ -38,20 +42,28 @@ public class TemaController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
+	//=================== Find By Nome ======================//
+	
 	@GetMapping ("/nome/{nome}")
 	public ResponseEntity<List<Tema>> getByName(@PathVariable String nome){
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
 	}
+	
+	//=================== Post Tema ======================//
 	
 	@PostMapping
 	public ResponseEntity<Tema> post (@RequestBody Tema tema) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
 	
+	//=================== Put Tema ======================//
+	
 	@PutMapping
 	public ResponseEntity<Tema> put (@RequestBody Tema tema) {
 		return ResponseEntity.ok(repository.save(tema));
 	}
+	
+	//=================== Delete Tema ======================//
 	
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable long id) {
